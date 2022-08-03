@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,4 +35,47 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.my-app-toast-container {
+  /* width: 375px; */
+  /* max-width: 560px; */
+  /* width:375px;
+  max-width: 560px; */
+  /* min-width: 50%;
+  max-width: 100%; */
+}
+
+.my-app-success-toast-message {
+  background: #F4FBF7;
+  border: 1px solid #00C39E;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.my-app-error-toast-message {
+  background: #FFEBEB;
+  border: 1px solid #EB5757;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.my-app-info-toast-message {
+  background: #F4F6FC;
+  border: 1px solid #005FDA;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.my-app-success-toast-message,
+.my-app-error-toast-message,
+.my-app-info-toast-message > div:last-child {
+  font-family: 'ABC Whyte';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  color: #1D191F;
 }
