@@ -7,7 +7,8 @@ const toastOptions = {
   draggable: false,
   transition: Zoom,
   pauseOnFocusLoss: false,
-  // closeButton: false
+  closeOnClick: false,
+  closeButton: false
 };
 
 const dismissToast =  async () => {
