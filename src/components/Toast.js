@@ -3,7 +3,7 @@ import { successToast, errorToast, infoToast } from "../utils/toast";
 
 import errorIcon from "../assets/error-icon.svg";
 import successIcon from "../assets/success.svg";
-import infoIcon from "../assets/info.svg";
+import { ReactComponent as InfoIcon } from "../assets/info.svg";
 
 export const Toast = () => {
   return (
@@ -37,7 +37,7 @@ export const Toast = () => {
           infoToast(
             "This is the notification text and it is only used for neutral and positive cases",
             {
-              icon: <img src={infoIcon} alt="infoIcon" />,
+              icon: <InfoIcon />
             }
           )
         }
