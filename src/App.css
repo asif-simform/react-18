@@ -64,6 +64,14 @@ button {
   max-width: 560px; */
   /* min-width: 50%;
   max-width: 100%; */
+  padding-bottom: 35px;
+}
+
+@media only screen and (max-width: 600px) {
+  .my-app-toast-container {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
 }
 
 .my-app-success-toast-message {
