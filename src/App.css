@@ -37,6 +37,26 @@
   }
 }
 
+button {
+  height: 30px;
+  width: 100px;
+  margin: 10px;
+  border: 1px solid blueviolet;
+  border-radius: 10px;
+  color:rgb(56, 66, 121);
+  font-size: 16px;
+  font-weight: 200;
+  cursor: pointer;
+}
+
+.action-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  
+}
+
 .my-app-toast-container {
   /* width: 375px; */
   /* max-width: 560px; */

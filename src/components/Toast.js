@@ -7,8 +7,7 @@ import infoIcon from "../assets/info.svg";
 
 export const Toast = () => {
   return (
-    <div>
-      <hr />
+    <div className="action-button">
 
       <button
         onClick={() =>
@@ -22,7 +21,6 @@ export const Toast = () => {
       >
         Success
       </button>
-      <hr />
 
       <button
         onClick={() =>
@@ -33,7 +31,7 @@ export const Toast = () => {
       >
         Error
       </button>
-      <hr />
+
       <button
         onClick={() =>
           infoToast(
