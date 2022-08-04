@@ -7,22 +7,20 @@ const toastOptions = {
   draggable: false,
   transition: Zoom,
   pauseOnFocusLoss: false,
-  closeOnClick: false,
+  closeOnClick: true,
   closeButton: false
 };
 
 const dismissToast =  async () => {
-  console.log("called d")
-   // Easy, right 😎
-   toast.clearWaitingQueue();
-  await toast.dismiss();
+  // toast.clearWaitingQueue();
+  // await toast.dismiss();
 }
 
 export const successToast = (message, options) => {
+  console.log("successToast")
   if (!message) return;
 
   dismissToast();
-  console.log("called s")
 
   toast.success(message, {
     className:'my-app-success-toast-message',
