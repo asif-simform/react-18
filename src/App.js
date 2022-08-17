@@ -17,6 +17,7 @@ function App() {
       <AppContext>
         <div className="App">
           <header className="App-header">
+            <h1>{JSON.stringify({ isMobile })}</h1>
             <Toast />
             {/* <img src={logo} className="App-logo" alt="logo" />
             <Counter />
