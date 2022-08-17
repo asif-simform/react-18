@@ -4,7 +4,7 @@ import { AppContext } from "./context/Provider";
 import Toast from "./components/Toast";
 import ToastContainer from "./containers/ToastContainer";
 // import logo from "./logo.svg";
-import  isMobileDeviceDetect from './utils/isMobileDeviceDetect'
+import  isMobileDeviceDetect from './utils/deviceDetect'
 
 import "./App.css";
 
