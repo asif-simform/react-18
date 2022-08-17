@@ -4,10 +4,14 @@ import { AppContext } from "./context/Provider";
 import Toast from "./components/Toast";
 import ToastContainer from "./containers/ToastContainer";
 // import logo from "./logo.svg";
+import  isMobileDeviceDetect from './utils/isMobileDeviceDetect'
 
 import "./App.css";
 
 function App() {
+  const isMobile = isMobileDeviceDetect();
+  console.log({ isMobile })
+
   return (
     <>
       <AppContext>

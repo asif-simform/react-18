@@ -11,16 +11,15 @@ const toastOptions = {
   closeButton: false
 };
 
-const dismissToast =  async () => {
-  // toast.clearWaitingQueue();
-  // await toast.dismiss();
+const dismissToast = (containerId) => {
+  toast.clearWaitingQueue();
+  toast.dismiss();
 }
 
 export const successToast = (message, options) => {
-  console.log("successToast")
   if (!message) return;
 
-  dismissToast();
+  dismissToast(options.containerId);
 
   toast.success(message, {
     className:'my-app-success-toast-message',
@@ -32,7 +31,7 @@ export const successToast = (message, options) => {
 export const errorToast =  (message, options) => {
   if (!message) return
 
-  dismissToast();
+  dismissToast(options.containerId);
 
   toast.error(message, {
     className:'my-app-error-toast-message',
@@ -44,7 +43,7 @@ export const errorToast =  (message, options) => {
 export const infoToast =  (message, options) => {
   if (!message) return
 
-  dismissToast();
+  dismissToast(options.containerId);
 
   toast.info(message, {
     className:'my-app-info-toast-message',
