@@ -3,14 +3,15 @@ import { AppContext } from "./context/Provider";
 // import Counter from "./components/Counter";
 import Toast from "./components/Toast";
 import ToastContainer from "./containers/ToastContainer";
+import TodoList from "./containers/TodoList";
 // import logo from "./logo.svg";
-import  isMobileDeviceDetect from './utils/deviceDetect'
+import isMobileDeviceDetect from "./utils/deviceDetect";
 
 import "./App.css";
 
 function App() {
   const isMobile = isMobileDeviceDetect();
-  console.log({ isMobile })
+  console.log({ isMobile });
 
   return (
     <>
@@ -19,9 +20,10 @@ function App() {
           <header className="App-header">
             <h1>{JSON.stringify({ isMobile })}</h1>
             <Toast />
-            {/* <img src={logo} className="App-logo" alt="logo" />
-            <Counter />
+            {/* <img src={logo} className="App-logo" alt="logo" /> */}
+            {/* <Counter />
             <Actions /> */}
+            <TodoList />
           </header>
         </div>
         <ToastContainer />
