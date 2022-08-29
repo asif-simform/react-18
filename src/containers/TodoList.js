@@ -31,7 +31,7 @@ function TodoList() {
       <hr />
       {data?.map((item, index) => {
         return (
-          <div key={index}>
+          <div key={index} id={index}>
             <p>{item.name}</p>
             <button type="button" onClick={()=> removeItem(index)}>
               Delete

@@ -12,6 +12,8 @@ const ToastContainer = () => {
         containerId="one"
         className="my-app-toast-container"
         enableMultiContainer={true}
+        autoClose={2000}
+        pauseOnFocusLoss={false}
       />
       <Container
         limit={1}

@@ -2,13 +2,13 @@ import { toast, Zoom } from 'react-toastify'
 
 const toastOptions = {
   position: toast.POSITION.BOTTOM_CENTER,
-  autoClose: false,
+  autoClose: true,
   hideProgressBar: true,
   draggable: false,
   transition: Zoom,
   pauseOnFocusLoss: false,
   closeOnClick: true,
-  closeButton: false
+  closeButton: false,
 };
 
 const dismissToast = (containerId) => {
