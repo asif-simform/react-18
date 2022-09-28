@@ -12,6 +12,7 @@ function* chunks(arr, n) {
 function Greed() {
   const greedsList = useMemo(() => {
     return [...chunks(GREEDS, 9)];
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [GREEDS]);
 
   console.log(greedsList);
