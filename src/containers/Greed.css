@@ -1,0 +1,19 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* grid-template-columns: 2fr 1fr;
+    grid-gap: 16px; */
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  grid-template-columns: 2fr 1fr;
+}
+
+.column {
+  height: 50px;
+  width: 50px;
+}
