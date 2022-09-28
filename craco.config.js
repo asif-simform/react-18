@@ -4,23 +4,29 @@ const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   //   reactScriptsVersion: "react-scripts" /* (default value) */,
-
   webpack: {
     configure: (webpackConfig, { env, paths }) => {
-      webpackConfig.externals = {
-        react: {
-          root: "React",
-          commonjs2: "react",
-          commonjs: "react",
-          amd: "react",
-        },
-        "react-dom": {
-          root: "ReactDOM",
-          commonjs2: "react-dom",
-          commonjs: "react-dom",
-          amd: "react-dom",
-        },
-      };
+      console.log("007", env);
+
+      if (env !== "development") {
+        webpackConfig.output.libraryTarget = "umd";
+
+        webpackConfig.externals = {
+          react: {
+            root: "React",
+            commonjs2: "react",
+            commonjs: "react",
+            amd: "react",
+          },
+          "react-dom": {
+            root: "ReactDOM",
+            commonjs2: "react-dom",
+            commonjs: "react-dom",
+            amd: "react-dom",
+          },
+        };
+      }
+
       return webpackConfig;
     },
     plugins: [
