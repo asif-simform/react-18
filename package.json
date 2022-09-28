@@ -18,6 +18,7 @@
   "scripts": {
     "start": "HTTPS=true SSL_CRT_FILE=localhost.pem SSL_KEY_FILE=localhost-key.pem craco start",
     "build": "craco build",
+    "build:analyzer": "npm run build -- --stats",
     "test": "craco test",
     "eject": "craco eject"
   },
