@@ -28,6 +28,11 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+
+    <% if (process.env.NODE_ENV === 'development') { %>
+    <script src="https://unpkg.com/react@18.2.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+    <% } else { %>
     <script
       type="text/javascript"
       crossorigin
@@ -38,5 +43,6 @@
       crossorigin
       src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"
     ></script>
+    <% } %>
   </body>
 </html>
