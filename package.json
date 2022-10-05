@@ -6,14 +6,24 @@
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
-    "compression-webpack-plugin": "^10.0.0",
     "react": "^18.0.0-rc.0",
     "react-dom": "^18.0.0-rc.0",
     "react-helmet": "^6.1.0",
     "react-scripts": "5.0.0",
     "react-toastify": "^9.0.7",
-    "uglifyjs-webpack-plugin": "^2.2.0",
-    "web-vitals": "^2.1.2"
+    "web-vitals": "^2.1.4",
+    "workbox-background-sync": "^6.5.4",
+    "workbox-broadcast-update": "^6.5.4",
+    "workbox-cacheable-response": "^6.5.4",
+    "workbox-core": "^6.5.4",
+    "workbox-expiration": "^6.5.4",
+    "workbox-google-analytics": "^6.5.4",
+    "workbox-navigation-preload": "^6.5.4",
+    "workbox-precaching": "^6.5.4",
+    "workbox-range-requests": "^6.5.4",
+    "workbox-routing": "^6.5.4",
+    "workbox-strategies": "^6.5.4",
+    "workbox-streams": "^6.5.4"
   },
   "scripts": {
     "start": "HTTPS=true SSL_CRT_FILE=localhost.pem SSL_KEY_FILE=localhost-key.pem craco start",
@@ -42,6 +52,7 @@
   },
   "devDependencies": {
     "@craco/craco": "^6.4.5",
-    "terser-webpack-plugin": "^5.3.6"
+    "terser-webpack-plugin": "^5.3.6",
+    "compression-webpack-plugin": "^10.0.0"
   }
 }
