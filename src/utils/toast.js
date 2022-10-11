@@ -12,8 +12,8 @@ const toastOptions = {
 };
 
 const dismissToast = (containerId) => {
-  toast.clearWaitingQueue();
-  toast.dismiss();
+  // toast.clearWaitingQueue();
+  // toast.dismiss();
 }
 
 export const successToast = (message, options) => {
