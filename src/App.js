@@ -3,6 +3,7 @@ import { AppContext } from "./context/Provider";
 // import Actions from "./components/Actions";
 // import Counter from "./components/Counter";
 import Toast from "./components/Toast";
+import NewApp from './containers/NewApp';
 // import TodoList from "./containers/TodoList";
 import isMobileDeviceDetect from "./utils/deviceDetect";
 import { fullDate } from "./utils/dateFormat";
@@ -38,6 +39,7 @@ function App() {
           {/* <Suspense fallback={<div>Loading...</div>}>
             <Greed />
           </Suspense> */}
+          <NewApp />
         </div>
         <Suspense>
           <ToastContainer />
