@@ -3,11 +3,11 @@ import { AppContext } from "./context/Provider";
 // import Actions from "./components/Actions";
 // import Counter from "./components/Counter";
 import Toast from "./components/Toast";
-import NewApp from './containers/NewApp';
+import NewApp from "./containers/NewApp";
 // import TodoList from "./containers/TodoList";
+import { AnimatedNumbersContainer } from "./containers/AnimatedNumbersContainer";
 import isMobileDeviceDetect from "./utils/deviceDetect";
 import { fullDate } from "./utils/dateFormat";
-
 import "./App.css";
 
 // const Greed = lazy(() =>
@@ -24,28 +24,27 @@ function App() {
   console.log({ fullDate });
 
   return (
-    <>
-      <AppContext>
-        <div className="App">
-          <header className="App-header">
-            Hey,
-            <h1>{JSON.stringify({ isMobile })}</h1>
-            <h1>{JSON.stringify({ fullDate })}</h1>
-            <Toast />
-            {/* <Counter />
+    <AppContext>
+      <div className="App">
+        <AnimatedNumbersContainer />
+        <header className="App-header">
+          Hey,
+          <h1>{JSON.stringify({ isMobile })}</h1>
+          <h1>{JSON.stringify({ fullDate })}</h1>
+          <Toast />
+          {/* <Counter />
             <Actions />
             <TodoList /> */}
-          </header>
-          {/* <Suspense fallback={<div>Loading...</div>}>
+        </header>
+        {/* <Suspense fallback={<div>Loading...</div>}>
             <Greed />
           </Suspense> */}
-          <NewApp />
-        </div>
-        <Suspense>
-          <ToastContainer />
-        </Suspense>
-      </AppContext>
-    </>
+        <NewApp />
+      </div>
+      <Suspense>
+        <ToastContainer />
+      </Suspense>
+    </AppContext>
   );
 }
 

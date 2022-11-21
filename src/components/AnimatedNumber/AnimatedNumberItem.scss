@@ -1,0 +1,46 @@
+.AnimatedNumberItem {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.AnimatedNumberItem__wrapper {
+  transition: transform ease-out 0.2s;
+}
+
+.AnimatedNumberItem__number {
+  line-height: 1;
+  text-align: center;
+}
+
+
+.AnimatedNumberItem__number__increase {
+  animation: pulseGreen 500ms cubic-bezier(0.4, 0, 0.6, 1) 1;
+}
+
+.AnimatedNumberItem__number__decrease {
+  animation: pulseRed 500ms cubic-bezier(0.4, 0, 0.6, 1) 1;
+}
+
+@keyframes pulseGreen {
+
+  0%,
+  100% {
+      color: #00c39e;
+  }
+
+  50% {
+      @apply text-green-500;
+  }
+}
+
+@keyframes pulseRed {
+
+  0%,
+  100% {
+      color: #eb5757;
+  }
+
+  50% {
+      @apply text-red-500;
+  }
+}
