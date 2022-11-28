@@ -8,6 +8,8 @@ import NewApp from "./containers/NewApp";
 import RoutingNumber from "./components/RoutingNumber/index";
 // import isMobileDeviceDetect from "./utils/deviceDetect";
 // import { fullDate } from "./utils/dateFormat";
+import { sum } from 'app-18-demo/src/components/Button/index'
+import RouteApp from './RouteApp'
 import "./App.css";
 
 // const Greed = lazy(() =>
@@ -20,9 +22,11 @@ const ToastContainer = lazy(() =>
 
 function App() {
   // const isMobile = isMobileDeviceDetect();
-
+  sum(100,200);
+  
   return (
     <AppContext>
+    <RouteApp />
       <div className="container">
         <RoutingNumber />
       </div>
