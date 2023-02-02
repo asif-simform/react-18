@@ -107,3 +107,50 @@ button {
   align-items: center;
   color: #1D191F;
 }
+
+
+table.scrollTable {
+  border: 1px solid #963;
+  width: 718px;
+}
+
+thead.fixedHeader {
+  display: block;
+}
+
+thead.fixedHeader tr {
+  height: 30px;
+  background: #c96;
+}
+
+thead.fixedHeader tr th {
+  border-right: 1px solid black;
+}
+
+tbody.scrollContent {
+  display: block;
+  height: 500px;
+  overflow: auto;
+}
+
+tbody.scrollContent td {
+  background: #eee;
+  border-right: 1px solid black;
+  height: 25px;
+}
+
+tbody.scrollContent tr.alternateRow td {
+  background: #fff;
+}
+
+thead.fixedHeader th {
+  width: 233px;
+}
+
+thead.fixedHeader th:last-child {
+  width: 251px;
+}
+
+tbody.scrollContent td {
+  width: 233px;
+}
