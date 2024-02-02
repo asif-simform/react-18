@@ -1,6 +1,7 @@
 // const webpack = require('webpack');
 const CompressionPlugin = require("compression-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   //   reactScriptsVersion: "react-scripts" /* (default value) */,
@@ -10,8 +11,8 @@ module.exports = {
 
       if (env !== "development") {
         webpackConfig.externals = {
-            'react': 'React',
-            'react-dom': 'ReactDOM'
+          react: "React",
+          "react-dom": "ReactDOM",
         };
       }
 
@@ -25,6 +26,9 @@ module.exports = {
         threshold: 10240,
         minRatio: 0.8,
       }),
+      new MiniCssExtractPlugin({
+        filename: "[name].[contenthash].css",
+      }),
     ],
     optimization: {
       concatenateModules: true,
@@ -35,6 +39,11 @@ module.exports = {
       },
       minimize: true,
       minimizer: [new TerserPlugin()],
+    },
+    output: {
+      chunkFilename: "[name].[contenthash].js",
+      filename: "[name].[contenthash].js",
+      assetModuleFilename: "[name].[contenthash][ext][query]",
     },
   },
 };
