@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #0000FF;
+  background-color: #0000ff;
   /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
@@ -39,22 +39,24 @@
 
 button {
   height: 30px;
-  width: 100px;
+  width: auto;
   margin: 10px;
   border: 1px solid blueviolet;
   border-radius: 10px;
-  color:rgb(56, 66, 121);
+  color: rgb(56, 66, 121);
   font-size: 16px;
   font-weight: 200;
   cursor: pointer;
+}
+
+a {
+  padding: 5px;
 }
 
 .action-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  
-  
 }
 
 .my-app-toast-container {
@@ -75,22 +77,22 @@ button {
 }
 
 .my-app-success-toast-message {
-  background: #F4FBF7;
-  border: 1px solid #00C39E;
+  background: #f4fbf7;
+  border: 1px solid #00c39e;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
 
 .my-app-error-toast-message {
-  background: #FFEBEB;
-  border: 1px solid #EB5757;
+  background: #ffebeb;
+  border: 1px solid #eb5757;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
 
 .my-app-info-toast-message {
-  background: #F4F6FC;
-  border: 1px solid #005FDA;
+  background: #f4f6fc;
+  border: 1px solid #005fda;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
@@ -98,16 +100,15 @@ button {
 .my-app-success-toast-message,
 .my-app-error-toast-message,
 .my-app-info-toast-message > div:last-child {
-  font-family: 'ABC Whyte';
+  font-family: "ABC Whyte";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
   display: flex;
   align-items: center;
-  color: #1D191F;
+  color: #1d191f;
 }
-
 
 table.scrollTable {
   border: 1px solid #963;
