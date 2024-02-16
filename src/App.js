@@ -2,12 +2,12 @@ import {
   lazy,
   Suspense,
   useState,
-  useCallback,
-  useEffect,
-  useRef,
+  // useCallback,
+  // useEffect,
+  // useRef,
 } from "react";
 import AnimatedNumbers from "react-animated-numbers";
-import { clearInterval, setInterval } from "worker-timers";
+// import { clearInterval, setInterval } from "worker-timers";
 
 import { AppContext } from "./context/Provider";
 // import Actions from "./components/Actions";
@@ -22,7 +22,6 @@ import { AppContext } from "./context/Provider";
 // import { sum } from "app-18-demo/src/components/Button/index";
 import RouteApp from "./RouteApp";
 import "./App.css";
-import axios from "axios";
 
 // const Greed = lazy(() =>
 //   import(/* webpackChunkName: "Greed" */ "./containers/Greed")
@@ -34,129 +33,66 @@ const ToastContainer = lazy(() =>
 
 function App() {
   const [num, setNum] = useState(3539.55);
-  const [, setAppVisibility] = useState(false);
-  const [count, setCount] = useState(0);
-  const interval = useRef(null);
+  // const [, setAppVisibility] = useState(false);
+  // const [count, setCount] = useState(0);
+  // const interval = useRef(null);
 
-  const clearIntervalTimer = useCallback(() => {
-    console.log(`0007 clearIntervalTimer Called`);
+  // const clearIntervalTimer = useCallback(() => {
+  //   console.log(`0007 clearIntervalTimer Called`);
 
-    if (interval.current) {
-      console.log(`0007 clearIntervalTimer Called inside if con`);
-      try {
-        // NOTE: this is not window.clearTimeout, this is from the worker-timers package
-        // worker-timers version can throw if the id is invalid
-        clearInterval(interval.current);
-        interval.current = null;
-      } catch (e) {
-        // ignore
-        console.log(`clearInterval error :: ${e}`);
-      }
-    }
-  }, []);
+  //   if (interval.current) {
+  //     console.log(`0007 clearIntervalTimer Called inside if con`);
+  //     try {
+  //       // NOTE: this is not window.clearTimeout, this is from the worker-timers package
+  //       // worker-timers version can throw if the id is invalid
+  //       clearInterval(interval.current);
+  //       interval.current = null;
+  //     } catch (e) {
+  //       // ignore
+  //       console.log(`clearInterval error :: ${e}`);
+  //     }
+  //   }
+  // }, []);
 
-  useEffect(() => {
-    const callback = () => {
-      setCount((count) => {
-        console.log(`Count is :: ${count + 1}`);
-        return count + 1;
-      });
-    };
+  // useEffect(() => {
+  //   const callback = () => {
+  //     setCount((count) => {
+  //       console.log(`Count is :: ${count + 1}`);
+  //       return count + 1;
+  //     });
+  //   };
 
-    interval.current = setInterval(callback, 1000);
+  //   interval.current = setInterval(callback, 1000);
 
-    return () => {
-      clearIntervalTimer();
-    };
-  }, []);
+  //   return () => {
+  //     clearIntervalTimer();
+  //   };
+  // }, []);
 
-  // const isMobile = isMobileDeviceDetect();
   // sum(100, 200);
-
-  const export2csv = async () => {
-    // let data = "";
-    // const tableData = [];
-    // const rows = [
-    //   ['111', '222', '333'],
-    //   ['aaa', 'bbb', 'ccc'],
-    //   ['AAA', 'BBB', 'CCC']
-    // ];
-    // for (const row of rows) {
-    //   const rowData = [];
-    //   for (const column of row) {
-    //     rowData.push(column);
-    //   }
-    //   tableData.push(rowData.join(","));
-    // }
-    // data += tableData.join("\n");
-
-    const data = await fetch(
-      "https://tagb-data-staging.s3.amazonaws.com/reservations1669706171681.csv?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA54DFYIQ7MXV5OQ5J%2F20221129%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221129T071611Z&X-Amz-Expires=7200&X-Amz-Signature=2d68aa0213b57d151bf93eef1f8e7ac637cd7a9062e37da121230491e65735b4&X-Amz-SignedHeaders=host"
-    );
-    const data1 = await data.blob();
-
-    const a = document.createElement("a");
-    a.href = URL.createObjectURL(new Blob([data1], { type: "text/csv" }));
-
-    // a.href = 'https://tagb-data-staging.s3.amazonaws.com/reservations1669706171681.csv?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA54DFYIQ7MXV5OQ5J%2F20221129%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221129T071611Z&X-Amz-Expires=7200&X-Amz-Signature=2d68aa0213b57d151bf93eef1f8e7ac637cd7a9062e37da121230491e65735b4&X-Amz-SignedHeaders=host';
-    a.setAttribute("download", "data1as.csv");
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-  };
 
   // if(true){
   //   return <ItemsList />
   // }
 
-  const callAPI = () => {
-    const url = "http://localhost:8888/api.harboursquare/V1/rider/route_runs";
+  // const onVisibilityChange = useCallback(() => {
+  //   if (document.hidden) {
+  //     setAppVisibility(true);
+  //   } else {
+  //     setAppVisibility(false);
+  //   }
+  //   console.log(`App Visibility Changed :: ${document.hidden}`);
+  // }, [setAppVisibility]);
 
-    axios
-      .get(url)
-      .then(function (response) {
-        // handle success
-        console.log("response", response?.data);
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error?.response?.data);
-      });
-  };
-
-  const onVisibilityChange = useCallback(() => {
-    if (document.hidden) {
-      setAppVisibility(true);
-    } else {
-      setAppVisibility(false);
-    }
-    console.log(`App Visibility Changed :: ${document.hidden}`);
-  }, [setAppVisibility]);
-
-  useEffect(() => {
-    document.addEventListener("visibilitychange", onVisibilityChange);
-    return () => {
-      document.removeEventListener("visibilitychange", onVisibilityChange);
-    };
-  }, [onVisibilityChange]);
+  // useEffect(() => {
+  //   document.addEventListener("visibilitychange", onVisibilityChange);
+  //   return () => {
+  //     document.removeEventListener("visibilitychange", onVisibilityChange);
+  //   };
+  // }, [onVisibilityChange]);
 
   return (
     <AppContext>
-      <button onClick={export2csv}>Export array to csv file</button>
-      <br />
-      <br />
-      <a
-        download="SupportUs_user_import.csv"
-        // target='_blank'
-        href="https://tagb-data-staging.s3.amazonaws.com/reservations1669706171681.csv?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA54DFYIQ7MXV5OQ5J%2F20221129%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221129T071611Z&X-Amz-Expires=7200&X-Amz-Signature=2d68aa0213b57d151bf93eef1f8e7ac637cd7a9062e37da121230491e65735b4&X-Amz-SignedHeaders=host"
-        rel="noreferrer"
-        type="text/csv"
-      >
-        Download CSV template
-      </a>
-      <br />
-      <br />
-      <br />
       <RouteApp />
       <div
         className="container"
@@ -183,7 +119,7 @@ function App() {
         </div>
       </div>
       <div>
-        {/* <h1>{JSON.stringify({ isMobile })}</h1>
+        {/* 
           <h1>{JSON.stringify({ fullDate })}</h1>
             <Toast />*/}
         {/* <Counter />
@@ -197,23 +133,23 @@ function App() {
       <Suspense>
         <ToastContainer />
       </Suspense>
-
-      <button onClick={callAPI}>Call API</button>
-
       <hr />
-
-      <h1>Timer</h1>
-
-      <div
+      <md-outlined-button>Back</md-outlined-button>
+      <br />
+      <br />
+      <md-filled-button>Next</md-filled-button>
+      <br />
+      <br />
+      {/** 
+        <div
         style={{
           textAlign: "center",
           fontSize: "60px",
         }}
       >
         <h5>{count}</h5>
-
         <button onClick={clearIntervalTimer}>clearIntervalTimer</button>
-      </div>
+      </div>  */}
     </AppContext>
   );
 }

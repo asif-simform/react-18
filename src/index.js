@@ -5,6 +5,11 @@ import App from "./App";
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 
+// m3 Material ui web
+import '@material/web/button/filled-button.js';
+import '@material/web/button/outlined-button.js';
+
+
 // before
 // const container = document.getElementById('root');
 // ReactDOM.render(<App />, container);
