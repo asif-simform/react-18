@@ -1,12 +1,12 @@
 import {
   lazy,
   Suspense,
-  useState,
+  // useState,
   // useCallback,
   // useEffect,
   // useRef,
 } from "react";
-import AnimatedNumbers from "react-animated-numbers";
+// import AnimatedNumbers from "react-animated-numbers";
 // import { clearInterval, setInterval } from "worker-timers";
 
 import { AppContext } from "./context/Provider";
@@ -14,13 +14,15 @@ import { AppContext } from "./context/Provider";
 // import Counter from "./components/Counter";
 // import Toast from "./components/Toast";
 // import NewApp from "./containers/NewApp";
+// import {Graphs} from "./containers/Graphs";
+import ImageUplaod from "./containers/ImageUplaod";
 // import ItemsList from "./containers/ItemsList";
 // import TodoList from "./containers/TodoList";
 // import RoutingNumber from "./components/RoutingNumber/index";
 // import isMobileDeviceDetect from "./utils/deviceDetect";
 // import { fullDate } from "./utils/dateFormat";
 // import { sum } from "app-18-demo/src/components/Button/index";
-import RouteApp from "./RouteApp";
+// import RouteApp from "./RouteApp";
 import "./App.css";
 
 // const Greed = lazy(() =>
@@ -32,7 +34,7 @@ const ToastContainer = lazy(() =>
 );
 
 function App() {
-  const [num, setNum] = useState(3539.55);
+  // const [num, setNum] = useState(3539.55);
   // const [, setAppVisibility] = useState(false);
   // const [count, setCount] = useState(0);
   // const interval = useRef(null);
@@ -93,31 +95,34 @@ function App() {
 
   return (
     <AppContext>
-      <RouteApp />
-      <div
-        className="container"
-        style={{
-          display: "none",
-        }}
-      >
-        <AnimatedNumbers
-          includeComma
-          animateToNumber={num}
-          fontStyle={{ fontSize: 40 }}
-          configs={[
-            { mass: 1, tension: 220, friction: 100 },
-            { mass: 1, tension: 180, friction: 130 },
-            { mass: 1, tension: 280, friction: 90 },
-            { mass: 1, tension: 180, friction: 135 },
-            { mass: 1, tension: 260, friction: 100 },
-            { mass: 1, tension: 210, friction: 180 },
-          ]}
-        ></AnimatedNumbers>
-        <div>
-          <button onClick={() => setNum((state) => state + 31234)}>+</button>
-          <button onClick={() => setNum((state) => state - 31234)}>-</button>
-        </div>
-      </div>
+     {
+      //  <RouteApp />
+      // <div
+      //   className="container"
+      //   style={{
+      //     display: "none",
+      //   }}
+      // >
+      //   <AnimatedNumbers
+      //     includeComma
+      //     animateToNumber={num}
+      //     fontStyle={{ fontSize: 40 }}
+      //     configs={[
+      //       { mass: 1, tension: 220, friction: 100 },
+      //       { mass: 1, tension: 180, friction: 130 },
+      //       { mass: 1, tension: 280, friction: 90 },
+      //       { mass: 1, tension: 180, friction: 135 },
+      //       { mass: 1, tension: 260, friction: 100 },
+      //       { mass: 1, tension: 210, friction: 180 },
+      //     ]}
+      //   ></AnimatedNumbers>
+      //   <div>
+      //     <button onClick={() => setNum((state) => state + 31234)}>+</button>
+      //     <button onClick={() => setNum((state) => state - 31234)}>-</button>
+      //   </div>
+      // </div>
+    }
+      <ImageUplaod />
       <div>
         {/* 
           <h1>{JSON.stringify({ fullDate })}</h1>
@@ -134,12 +139,12 @@ function App() {
         <ToastContainer />
       </Suspense>
       <hr />
-      <md-outlined-button>Back</md-outlined-button>
+     {/** <md-outlined-button>Back</md-outlined-button>
       <br />
       <br />
       <md-filled-button>Next</md-filled-button>
       <br />
-      <br />
+        <br /> **/}
       {/** 
         <div
         style={{
@@ -149,7 +154,11 @@ function App() {
       >
         <h5>{count}</h5>
         <button onClick={clearIntervalTimer}>clearIntervalTimer</button>
-      </div>  */}
+      </div> 
+    
+    <Graphs />
+  */}
+      
     </AppContext>
   );
 }
