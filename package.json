@@ -13,6 +13,7 @@
     "app-18-demo": "link: /Users/asifvora/Documents/Lerning/app-18-demo",
     "axios": "^1.6.5",
     "browser-image-compression": "^2.0.2",
+    "compressorjs": "^1.2.1",
     "formik": "^2.2.9",
     "moment": "^2.29.4",
     "react": "^18.0.0-rc.0",

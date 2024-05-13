@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import { Upload, Button, message } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
-import imageCompression from 'browser-image-compression';
+// import imageCompression from 'browser-image-compression';
+import Compressor from 'compressorjs';
 
 const ImageUplaod = () => {
     const [fileList, setFileList] = useState([]);
     const [isLoading, setLoading] = useState(false);
 
     const options = {
-        maxSizeMB: 1,
-        maxWidthOrHeight: 1920,
+        // maxSizeMB: 1,
+        maxWidthOrHeight: 1300,
+        // maxWidthOrHeight: 5000,
         useWebWorker: true,
     }
 
@@ -24,8 +26,24 @@ const ImageUplaod = () => {
         setFileList(newFileList);
     };
 
-    const compressFile = async (imageFile) => {
-        const compressedFile = await imageCompression(imageFile, options);
+    // const compressFile = async (imageFile) => {
+    //     const compressedFile = await imageCompression(imageFile, options);
+    //     return compressedFile;
+    // }
+
+    const compressFileUsingCompressorJS = async (imageFile) => {
+        const compressedFile = new Promise((resolve, reject) => {
+            new Compressor(imageFile, { 
+                quality: 0.8,
+                success(result) {
+                    resolve(result);
+                },
+                error(err) {
+                  console.log("Error in file convert", err.message);
+                },
+              });
+          });
+
         return compressedFile;
     }
 
@@ -44,7 +62,7 @@ const ImageUplaod = () => {
             const item = fileList[i];
             // Perform asynchronous operation on item
             console.log(`Before compress :: Size ${Math.round(item.size / 1024 / 1024)} MB`);
-            const processedItem = await compressFile(item.originFileObj);
+            const processedItem = await compressFileUsingCompressorJS(item.originFileObj);
             processedData.push(processedItem);
 
             console.log('Processed file:', processedItem);

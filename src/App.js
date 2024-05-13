@@ -156,9 +156,9 @@ function App() {
         <button onClick={clearIntervalTimer}>clearIntervalTimer</button>
       </div> 
     
-    <Graphs />
+   <Graphs />
   */}
-      
+  
     </AppContext>
   );
 }
