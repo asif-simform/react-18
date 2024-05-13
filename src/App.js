@@ -158,7 +158,7 @@ function App() {
     
    <Graphs />
   */}
-  
+    <span>Version: 1.0.1</span>
     </AppContext>
   );
 }
