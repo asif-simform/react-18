@@ -8,12 +8,12 @@ const ImageUplaod = () => {
     const [fileList, setFileList] = useState([]);
     const [isLoading, setLoading] = useState(false);
 
-    const options = {
-        // maxSizeMB: 1,
-        maxWidthOrHeight: 1300,
-        // maxWidthOrHeight: 5000,
-        useWebWorker: true,
-    }
+    // const options = {
+    //     // maxSizeMB: 1,
+    //     maxWidthOrHeight: 1300,
+    //     // maxWidthOrHeight: 5000,
+    //     useWebWorker: true,
+    // }
 
     const handleUpload = ({ fileList }) => {
         setFileList(fileList);
